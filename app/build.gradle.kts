@@ -46,4 +46,6 @@ dependencies {
 
     implementation(Google.material)
 
+    implementation(Koin.android)
+
 }
