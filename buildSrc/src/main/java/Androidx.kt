@@ -8,4 +8,8 @@ object Androidx {
     private const val constraintLayoutVersion = "2.0.4"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+    private const val roomVersion = "2.2.0"
+    const val room = "androidx.room:room-runtime:$roomVersion"
+    const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
 }
