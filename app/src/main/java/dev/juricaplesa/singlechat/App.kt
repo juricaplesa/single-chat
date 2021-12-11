@@ -1,6 +1,8 @@
 package dev.juricaplesa.singlechat
 
 import android.app.Application
+import dev.juricaplesa.message_data.di.messageDataModule
+import dev.juricaplesa.message_domain.di.messageDomainModule
 import dev.juricaplesa.singlechat.di.databaseModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -13,10 +15,11 @@ class App : Application() {
 
         startKoin {
             androidContext(this@App)
-            modules(appModules)
+            modules(appModules + messageModules)
         }
     }
 
 }
 
 val appModules = listOf(databaseModule)
+val messageModules = listOf(messageDomainModule, messageDataModule)

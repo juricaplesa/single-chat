@@ -8,8 +8,12 @@ import org.koin.dsl.module
 private const val DATABASE_NAME = "database"
 
 val databaseModule = module {
+
     single {
         Room.databaseBuilder(androidContext(), Database::class.java, DATABASE_NAME)
             .build()
     }
+
+    factory { get<Database>().messageDao() }
+
 }

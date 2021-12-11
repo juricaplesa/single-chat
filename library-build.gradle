@@ -11,4 +11,6 @@ dependencies {
 
     implementation Koin.core
 
+    implementation Kotlinx.coroutinesCore
+
 }
