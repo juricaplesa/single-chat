@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/messageListFragment">
+
+    <fragment
+        android:id="@+id/messageListFragment"
+        android:name="dev.juricaplesa.messagelist_ui.MessageListFragment"
+        android:label="message_list" />
+
+</navigation>
