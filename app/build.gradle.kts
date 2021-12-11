@@ -36,6 +36,7 @@ dependencies {
     implementation(project(Module.core))
     implementation(project(Module.coreData))
     implementation(project(Module.userData))
+    implementation(project(Module.userDomain))
     implementation(project(Module.messageData))
     implementation(project(Module.messageDomain))
     implementation(project(Module.messageListUi))

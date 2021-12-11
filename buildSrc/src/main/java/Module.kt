@@ -6,6 +6,7 @@ object Module {
 
     const val user = ":user"
     const val userData = ":user:user-data"
+    const val userDomain = ":user:user-domain"
 
     const val message = ":message"
     const val messageListUi = ":message:messageList-ui"
