@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 val messageListUiModule = module {
 
-    viewModel { MessageListViewModel() }
+    viewModel { MessageListViewModel(get(), get()) }
 
 }

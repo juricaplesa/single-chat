@@ -1,8 +1,10 @@
 apply {
-    from("$rootDir/library-build.gradle")
+    from("$rootDir/android-library-build.gradle")
 }
 
 dependencies {
-    "api"(Androidx.room)
+    "implementation"(project(Module.core))
+    "implementation"(Androidx.room)
+    "implementation"(Androidx.roomKtx)
     "kapt"(Androidx.roomCompiler)
 }

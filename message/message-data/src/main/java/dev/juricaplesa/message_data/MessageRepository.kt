@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface MessageRepository {
 
-    fun getMessages(): Flow<Result<Message>>
+    fun getMessages(): Flow<Result<List<Message>>>
 
     suspend fun sendMessage(message: Message): Result<Unit>
 

@@ -1,16 +1,17 @@
 object Androidx {
-    private const val coreKtxVersion = "1.6.0"
+    private const val coreKtxVersion = "1.7.0"
     const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
 
-    private const val appcompatVersion = "1.3.0"
+    private const val appcompatVersion = "1.4.0"
     const val appcompat = "androidx.appcompat:appcompat:$appcompatVersion"
 
-    private const val constraintLayoutVersion = "2.0.4"
+    private const val constraintLayoutVersion = "2.1.2"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
-    private const val roomVersion = "2.2.0"
+    private const val roomVersion = "2.4.0-rc01"
     const val room = "androidx.room:room-runtime:$roomVersion"
+    const val roomKtx = "androidx.room:room-ktx:$roomVersion"
     const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
 
     const val navigationVersion = "2.3.5"

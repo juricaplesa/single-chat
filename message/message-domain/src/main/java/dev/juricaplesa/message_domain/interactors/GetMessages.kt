@@ -9,7 +9,7 @@ class GetMessages(
     private val repository: MessageRepository
 ) {
 
-    fun execute(): Flow<Result<Message>> {
+    fun execute(): Flow<Result<List<Message>>> {
         return repository.getMessages()
     }
 

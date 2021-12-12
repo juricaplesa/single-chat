@@ -26,6 +26,7 @@
             android:background="@drawable/bg_input"
             android:includeFontPadding="false"
             android:inputType="textMultiLine"
+            android:hint="@string/message_input_hint"
             android:maxLines="4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/send"

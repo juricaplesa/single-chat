@@ -8,10 +8,8 @@ class MessageListViewHolder(
     private val binding: ItemSentMessageBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun setMessage(message: MessageUI) = with(itemView) {
-
+    fun setMessage(message: MessageUI) {
         binding.content.text = message.content
-
     }
 
 }

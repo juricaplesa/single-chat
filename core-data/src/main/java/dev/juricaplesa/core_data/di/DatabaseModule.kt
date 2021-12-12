@@ -1,7 +1,7 @@
-package dev.juricaplesa.singlechat.di
+package dev.juricaplesa.core_data.di
 
 import androidx.room.Room
-import dev.juricaplesa.singlechat.Database
+import dev.juricaplesa.core_data.Database
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 

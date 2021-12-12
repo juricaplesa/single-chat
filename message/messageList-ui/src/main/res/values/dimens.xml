@@ -6,5 +6,6 @@
     <dimen name="bg_input_padding_horizontal">16dp</dimen>
     <dimen name="bg_input_padding_vertical">8dp</dimen>
     <dimen name="message_padding">8dp</dimen>
+    <dimen name="divider_height">8dp</dimen>
 
 </resources>

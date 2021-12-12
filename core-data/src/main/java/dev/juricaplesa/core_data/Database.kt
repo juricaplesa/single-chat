@@ -1,9 +1,8 @@
-package dev.juricaplesa.singlechat
+package dev.juricaplesa.core_data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import dev.juricaplesa.message_data.local.MessageDao
-import dev.juricaplesa.message_data.local.model.MessageEntity
+import dev.juricaplesa.core_data.model.MessageEntity
 
 @Database(entities = [MessageEntity::class], version = 1)
 abstract class Database : RoomDatabase() {

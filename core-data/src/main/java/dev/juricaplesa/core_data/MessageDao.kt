@@ -1,12 +1,12 @@
-package dev.juricaplesa.message_data.local
+package dev.juricaplesa.core_data
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import dev.juricaplesa.message_data.local.common.MESSAGES_COLUMN_SENDER_ID
-import dev.juricaplesa.message_data.local.common.MESSAGES_TABLE_NAME
-import dev.juricaplesa.message_data.local.model.MessageEntity
+import dev.juricaplesa.core_data.common.MESSAGES_COLUMN_SENDER_ID
+import dev.juricaplesa.core_data.common.MESSAGES_TABLE_NAME
+import dev.juricaplesa.core_data.model.MessageEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

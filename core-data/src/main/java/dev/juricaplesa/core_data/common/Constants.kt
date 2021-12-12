@@ -1,4 +1,4 @@
-package dev.juricaplesa.message_data.local.common
+package dev.juricaplesa.core_data.common
 
 const val MESSAGES_TABLE_NAME = "messages"
 const val MESSAGES_COLUMN_ID = "id"

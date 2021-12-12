@@ -3,7 +3,8 @@ package dev.juricaplesa.singlechat
 import android.app.Application
 import dev.juricaplesa.message_data.di.messageDataModule
 import dev.juricaplesa.message_domain.di.messageDomainModule
-import dev.juricaplesa.singlechat.di.databaseModule
+import dev.juricaplesa.messagelist_ui.di.messageListUiModule
+import dev.juricaplesa.core_data.di.databaseModule
 import dev.juricaplesa.user_data.di.userDataModule
 import dev.juricaplesa.user_domain.di.userDomainModule
 import org.koin.android.ext.koin.androidContext
@@ -17,12 +18,12 @@ class App : Application() {
 
         startKoin {
             androidContext(this@App)
-            modules(appModules + messageModules + userModules)
+            modules(coreModules + messageModules + userModules)
         }
     }
 
 }
 
-val appModules = listOf(databaseModule)
-val messageModules = listOf(messageDomainModule, messageDataModule)
+val coreModules = listOf(databaseModule)
+val messageModules = listOf(messageDomainModule, messageDataModule, messageListUiModule)
 val userModules = listOf(userDomainModule, userDataModule)
