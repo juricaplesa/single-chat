@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dev.juricaplesa.components.BaseFragment
 import dev.juricaplesa.messagelist_ui.adapter.MessageListAdapter
 import dev.juricaplesa.messagelist_ui.databinding.FragmentMessageListBinding
-import dev.juricaplesa.messagelist_ui.model.MessageUI
 import org.koin.android.ext.android.inject
 
 class MessageListFragment : BaseFragment<MessageListViewModel, FragmentMessageListBinding>(),
@@ -28,21 +27,18 @@ class MessageListFragment : BaseFragment<MessageListViewModel, FragmentMessageLi
 
         binding.send.setOnClickListener(this)
 
-        adapter.addData(
-            listOf(
-                MessageUI("test1"),
-                MessageUI("test2"),
-                MessageUI("test3"),
-                MessageUI("test4"),
-                MessageUI("test5")
-            )
-        )
-
-        viewModel.newMessages.observe(viewLifecycleOwner, { data ->
-            adapter.addData(data)
+        viewModel.previousMessages.observe(viewLifecycleOwner, { data ->
+            adapter.addPreviousData(data)
+            binding.recyclerView.scrollToPosition(0)
         })
 
-        viewModel.getMessages()
+        viewModel.newMessages.observe(viewLifecycleOwner, { data ->
+            adapter.addNewData(data)
+            binding.recyclerView.scrollToPosition(0)
+        })
+
+        viewModel.getPreviousMessages()
+        viewModel.getNewMessages()
     }
 
     private fun setupRecyclerView(binding: FragmentMessageListBinding) {
@@ -62,6 +58,13 @@ class MessageListFragment : BaseFragment<MessageListViewModel, FragmentMessageLi
                 })
         }
 
+        binding.recyclerView.addOnLayoutChangeListener { _, _, _, _, bottom, _, _, _, oldBottom ->
+            if (bottom < oldBottom) {
+                binding.recyclerView.postDelayed({
+                    binding.recyclerView.smoothScrollToPosition(0)
+                }, 100)
+            }
+        }
     }
 
     override fun onClick(view: View?) {

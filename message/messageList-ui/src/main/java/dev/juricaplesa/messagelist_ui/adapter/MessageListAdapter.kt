@@ -10,9 +10,14 @@ class MessageListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var messages: ArrayList<MessageUI> = ArrayList()
 
-    fun addData(data: List<MessageUI>) {
-        messages.addAll(0, data)
-        notifyItemRangeInserted(0, data.size)
+    fun addPreviousData(data: List<MessageUI>) {
+        messages.addAll(data)
+        notifyItemRangeInserted(messages.size, data.size)
+    }
+
+    fun addNewData(data: MessageUI) {
+        messages.add(0, data)
+        notifyItemRangeInserted(0, 1)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

@@ -3,14 +3,13 @@ package dev.juricaplesa.message_domain.interactors
 import dev.juricaplesa.core.Result
 import dev.juricaplesa.core.model.Message
 import dev.juricaplesa.message_data.MessageRepository
-import kotlinx.coroutines.flow.Flow
 
-class GetMessages(
+class GetPreviousMessages(
     private val repository: MessageRepository
 ) {
 
-    fun execute(): Flow<Result<List<Message>>> {
-        return repository.getMessages()
+    suspend fun execute(): Result<List<Message>> {
+        return repository.getPreviousMessages()
     }
 
 }

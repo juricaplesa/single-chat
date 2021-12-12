@@ -7,6 +7,9 @@
     <string name="message_list_title">Single chat</string>
     <string name="message_input_hint">Write something to yourself</string>
 
+    <!-- Errors -->
+    <string name="error_general">Something went wrong</string>
+
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 
 </resources>
