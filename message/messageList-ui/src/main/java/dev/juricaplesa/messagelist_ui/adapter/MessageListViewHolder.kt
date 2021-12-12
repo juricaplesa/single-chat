@@ -1,4 +1,17 @@
 package dev.juricaplesa.messagelist_ui.adapter
 
-class MessageListViewHolder {
+import androidx.recyclerview.widget.RecyclerView
+import dev.juricaplesa.messagelist_ui.databinding.ItemSentMessageBinding
+import dev.juricaplesa.messagelist_ui.model.MessageUI
+
+class MessageListViewHolder(
+    private val binding: ItemSentMessageBinding,
+) : RecyclerView.ViewHolder(binding.root) {
+
+    fun setMessage(message: MessageUI) = with(itemView) {
+
+        binding.content.text = message.content
+
+    }
+
 }

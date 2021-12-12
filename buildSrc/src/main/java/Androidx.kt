@@ -1,8 +1,8 @@
 object Androidx {
-    private const val coreKtxVersion = "1.3.2"
+    private const val coreKtxVersion = "1.6.0"
     const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
 
-    private const val appcompatVersion = "1.2.0"
+    private const val appcompatVersion = "1.3.0"
     const val appcompat = "androidx.appcompat:appcompat:$appcompatVersion"
 
     private const val constraintLayoutVersion = "2.0.4"

@@ -1,4 +1,4 @@
-package dev.juricaplesa.messagelist_ui
+package dev.juricaplesa.components
 
 import android.os.Bundle
 import android.view.LayoutInflater

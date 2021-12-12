@@ -2,6 +2,9 @@
 <resources>
 
     <dimen name="bg_message_corner_radius">8dp</dimen>
+    <dimen name="bg_input_corner_radius">16dp</dimen>
+    <dimen name="bg_input_padding_horizontal">16dp</dimen>
+    <dimen name="bg_input_padding_vertical">8dp</dimen>
     <dimen name="message_padding">8dp</dimen>
 
 </resources>
