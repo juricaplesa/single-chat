@@ -1,6 +1,8 @@
 object Module {
     const val app = ":app"
 
+    const val components = ":components"
+
     const val core = ":core"
     const val coreData = ":core-data"
 

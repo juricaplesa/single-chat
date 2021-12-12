@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="bg_message_corner_radius">8dp</dimen>
+    <dimen name="message_padding">8dp</dimen>
+
+</resources>

@@ -34,6 +34,7 @@ android {
 
 dependencies {
 
+    implementation(project(Module.components))
     implementation(project(Module.core))
     implementation(project(Module.coreData))
     implementation(project(Module.userData))
