@@ -14,7 +14,7 @@ object Androidx {
     const val roomKtx = "androidx.room:room-ktx:$roomVersion"
     const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
 
-    const val navigationVersion = "2.3.5"
+    const val navigationVersion = "2.4.0-alpha02"
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 }
