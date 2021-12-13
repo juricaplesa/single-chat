@@ -1,7 +1,6 @@
 package dev.juricaplesa.message_data.local
 
 import dev.juricaplesa.core.Result
-import dev.juricaplesa.core.model.Message
 import dev.juricaplesa.core_data.MessageDao
 import dev.juricaplesa.core_data.model.MessageEntity
 import kotlinx.coroutines.Dispatchers
