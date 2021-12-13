@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.map
 
 class MessageRepositoryImpl(private val localMessageDataSource: LocalMessageDataSource) :
-    MessageRepository {
+    dev.juricaplesa.message_domain.MessageRepository {
 
     override suspend fun getPreviousMessages(): Result<List<Message>> {
         return when(val queryResult = localMessageDataSource.getPreviousMessages()) {
@@ -23,6 +23,6 @@ class MessageRepositoryImpl(private val localMessageDataSource: LocalMessageData
     }
 
     override suspend fun sendMessage(message: Message) =
-        localMessageDataSource.insertMessage(MessageEntity(message.id, message.senderId, message.content, message.timeSent))
+        localMessageDataSource.insertMessage(MessageEntity(message))
 
 }

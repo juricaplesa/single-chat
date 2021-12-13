@@ -1,6 +1,6 @@
 package dev.juricaplesa.message_data.di
 
-import dev.juricaplesa.message_data.MessageRepository
+import dev.juricaplesa.message_domain.MessageRepository
 import dev.juricaplesa.message_data.MessageRepositoryImpl
 import dev.juricaplesa.message_data.local.LocalMessageDataSource
 import org.koin.dsl.module

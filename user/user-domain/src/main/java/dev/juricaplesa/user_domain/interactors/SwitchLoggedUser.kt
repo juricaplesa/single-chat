@@ -1,13 +1,13 @@
 package dev.juricaplesa.user_domain.interactors
 
-import dev.juricaplesa.user_data.UserRepository
+import dev.juricaplesa.user_domain.UserRepository
 
-class SwitchUser(
+class SwitchLoggedUser(
     private val repository: UserRepository
 ) {
 
     fun execute() {
-        return repository.toggleLoggedUser()
+        return repository.switchLoggedUser()
     }
 
 }

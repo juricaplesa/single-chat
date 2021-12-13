@@ -5,4 +5,5 @@ apply {
 dependencies {
     "implementation"(project(Module.core))
     "implementation"(project(Module.coreData))
+    "implementation"(project(Module.messageDomain))
 }

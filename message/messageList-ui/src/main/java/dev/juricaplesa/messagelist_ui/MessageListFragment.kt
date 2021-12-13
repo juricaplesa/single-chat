@@ -58,6 +58,7 @@ class MessageListFragment : BaseFragment<MessageListViewModel, FragmentMessageLi
                 })
         }
 
+        //scroll to start after keyboard pops
         binding.recyclerView.addOnLayoutChangeListener { _, _, _, _, bottom, _, _, _, oldBottom ->
             if (bottom < oldBottom) {
                 binding.recyclerView.postDelayed({

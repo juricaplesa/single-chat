@@ -28,8 +28,7 @@ class MessageListViewModel(
 
     fun getPreviousMessages() {
         viewModelScope.launch {
-            val result = getPreviousMessages.execute()
-            when(result) {
+            when(val result = getPreviousMessages.execute()) {
                 is Result.Success -> _previousMessages.value = result.data.map { message -> MessageUI(message) }
                 is Result.Error -> _errorMessage.value = Event(R.string.error_general)
             }
@@ -39,9 +38,8 @@ class MessageListViewModel(
     fun getNewMessages() {
         getNewMessages.execute().onEach {
             when (it) {
-                is Result.Success -> {
-                    _newMessages.value = MessageUI(it.data)
-                }
+                is Result.Success -> _newMessages.value = MessageUI(it.data)
+                is Result.Error -> _errorMessage.value = Event(R.string.error_general)
             }
         }.launchIn(viewModelScope)
     }
