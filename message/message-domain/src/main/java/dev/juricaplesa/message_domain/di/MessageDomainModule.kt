@@ -9,6 +9,7 @@ import dev.juricaplesa.message_domain.interactors.GetNewMessages
 import dev.juricaplesa.message_domain.interactors.GetPreviousMessages
 import dev.juricaplesa.message_domain.interactors.SendMessage
 import dev.juricaplesa.user_domain.UserRepository
+import dev.juricaplesa.user_domain.interactors.GetLoggedUserId
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -27,9 +28,9 @@ object MessageDomainModule {
     @Provides
     fun provideSendMessage(
         messageRepository: MessageRepository,
-        userRepository: UserRepository
+        getLoggedUserId: GetLoggedUserId
     ): SendMessage {
-        return SendMessage(messageRepository, userRepository)
+        return SendMessage(messageRepository, getLoggedUserId)
     }
 
 }
