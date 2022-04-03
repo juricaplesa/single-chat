@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("androidx.navigation.safeargs")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -54,6 +56,7 @@ dependencies {
 
     implementation(Google.material)
 
-    implementation(Koin.android)
+    implementation(Hilt.android)
+    kapt(Hilt.compiler)
 
 }

@@ -1,14 +1,28 @@
 package dev.juricaplesa.message_data.di
 
-import dev.juricaplesa.message_domain.MessageRepository
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import dev.juricaplesa.core_data.MessageDao
 import dev.juricaplesa.message_data.MessageRepositoryImpl
 import dev.juricaplesa.message_data.local.LocalMessageDataSource
-import org.koin.dsl.module
+import dev.juricaplesa.message_domain.MessageRepository
+import javax.inject.Singleton
 
-val messageDataModule = module {
+@Module
+@InstallIn(SingletonComponent::class)
+object MessageDataModule {
 
-    single { LocalMessageDataSource(get()) }
+    @Provides
+    @Singleton
+    fun provideLocalMessageDataSource(messageDao: MessageDao): LocalMessageDataSource {
+        return LocalMessageDataSource(messageDao)
+    }
 
-    factory<MessageRepository> { MessageRepositoryImpl(LocalMessageDataSource(get())) }
+    @Provides
+    fun provideMessageRepository(localMessageDataSource: LocalMessageDataSource): MessageRepository {
+        return MessageRepositoryImpl(localMessageDataSource)
+    }
 
 }

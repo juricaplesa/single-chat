@@ -1,19 +1,32 @@
 package dev.juricaplesa.core_data.di
 
+import android.content.Context
 import androidx.room.Room
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import dev.juricaplesa.core_data.Database
-import org.koin.android.ext.koin.androidContext
-import org.koin.dsl.module
+import dev.juricaplesa.core_data.MessageDao
+import javax.inject.Singleton
 
 private const val DATABASE_NAME = "database"
 
-val databaseModule = module {
+@Module
+@InstallIn(SingletonComponent::class)
+object DatabaseModule {
 
-    single {
-        Room.databaseBuilder(androidContext(), Database::class.java, DATABASE_NAME)
+    @Provides
+    @Singleton
+    fun provideDatabase(@ApplicationContext applicationContext: Context): Database {
+        return Room.databaseBuilder(applicationContext, Database::class.java, DATABASE_NAME)
             .build()
     }
 
-    factory { get<Database>().messageDao() }
+    @Provides
+    fun provideMessageDao(database: Database): MessageDao {
+        return database.messageDao()
+    }
 
 }

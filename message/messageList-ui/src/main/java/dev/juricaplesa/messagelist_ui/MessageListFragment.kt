@@ -3,17 +3,19 @@ package dev.juricaplesa.messagelist_ui
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import dev.juricaplesa.components.BaseFragment
 import dev.juricaplesa.messagelist_ui.adapter.MessageListAdapter
 import dev.juricaplesa.messagelist_ui.databinding.FragmentMessageListBinding
-import org.koin.android.ext.android.inject
 
+@AndroidEntryPoint
 class MessageListFragment : BaseFragment<MessageListViewModel, FragmentMessageListBinding>(),
     View.OnClickListener {
 
-    override val viewModel: MessageListViewModel by inject()
+    override val viewModel: MessageListViewModel by viewModels()
     override fun getViewBinding() = FragmentMessageListBinding.inflate(layoutInflater)
 
     private val adapter = MessageListAdapter()
@@ -27,15 +29,15 @@ class MessageListFragment : BaseFragment<MessageListViewModel, FragmentMessageLi
 
         binding.send.setOnClickListener(this)
 
-        viewModel.previousMessages.observe(viewLifecycleOwner, { data ->
+        viewModel.previousMessages.observe(viewLifecycleOwner) { data ->
             adapter.addPreviousData(data)
             binding.recyclerView.scrollToPosition(0)
-        })
+        }
 
-        viewModel.newMessages.observe(viewLifecycleOwner, { data ->
+        viewModel.newMessages.observe(viewLifecycleOwner) { data ->
             adapter.addNewData(data)
             binding.recyclerView.scrollToPosition(0)
-        })
+        }
 
         viewModel.getPreviousMessages()
         viewModel.getNewMessages()

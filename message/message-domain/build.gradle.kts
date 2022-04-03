@@ -4,4 +4,5 @@ apply {
 
 dependencies {
     "implementation"(project(Module.core))
+    "implementation"(project(Module.userDomain))
 }

@@ -3,6 +3,7 @@ package dev.juricaplesa.messagelist_ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.juricaplesa.components.BaseViewModel
 import dev.juricaplesa.components.Event
 import dev.juricaplesa.core.Result
@@ -13,8 +14,10 @@ import dev.juricaplesa.messagelist_ui.model.MessageUI
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MessageListViewModel(
+@HiltViewModel
+class MessageListViewModel @Inject constructor(
     private val getPreviousMessages: GetPreviousMessages,
     private val getNewMessages: GetNewMessages,
     private val sendMessage: SendMessage
@@ -28,8 +31,9 @@ class MessageListViewModel(
 
     fun getPreviousMessages() {
         viewModelScope.launch {
-            when(val result = getPreviousMessages.execute()) {
-                is Result.Success -> _previousMessages.value = result.data.map { message -> MessageUI(message) }
+            when (val result = getPreviousMessages.execute()) {
+                is Result.Success -> _previousMessages.value =
+                    result.data.map { message -> MessageUI(message) }
                 is Result.Error -> _errorMessage.value = Event(R.string.error_general)
             }
         }

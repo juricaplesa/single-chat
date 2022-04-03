@@ -1,10 +1,19 @@
 package dev.juricaplesa.user_data.di
 
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import dev.juricaplesa.user_data.UserRepositoryImpl
-import org.koin.dsl.module
+import dev.juricaplesa.user_domain.UserRepository
 
-val userDataModule = module {
+@Module
+@InstallIn(SingletonComponent::class)
+object UserDataModule {
 
-    single { UserRepositoryImpl() }
+    @Provides
+    fun provideUserRepository(): UserRepository {
+        return UserRepositoryImpl()
+    }
 
 }

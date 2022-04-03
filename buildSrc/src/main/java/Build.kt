@@ -5,4 +5,6 @@ object Build {
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
 
     const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Androidx.navigationVersion}"
+
+    const val hiltAndroid = "com.google.dagger:hilt-android-gradle-plugin:${Hilt.hiltVersion}"
 }

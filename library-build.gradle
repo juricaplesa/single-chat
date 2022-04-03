@@ -9,8 +9,9 @@ java {
 
 dependencies {
 
-    implementation Koin.core
-
     implementation Kotlinx.coroutinesCore
+
+    implementation Hilt.core
+    kapt Hilt.compiler
 
 }
